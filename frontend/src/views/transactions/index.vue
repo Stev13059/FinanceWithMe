@@ -14,9 +14,9 @@
       @change=changePage>
       <span slot="Operation" slot-scope="text,records,index">
         <a-popconfirm title="Are you sure delete this data?" @confirm="deleteDate(text)">
-          <a-button :disabled="tabGroupData.find(f => f.selected).id || text.goalId" type=danger style="margin-right:10px;" :loading="delLoading">Delete</a-button>
+          <a-button :disabled="tabGroupData.find(f => f.selected).id || (text.goalId != ''&& text.goalId)" type=danger style="margin-right:10px;" :loading="delLoading">Delete</a-button>
         </a-popconfirm>
-        <a-button :disabled="tabGroupData.find(f => f.selected).id || text.goalId" style="margin-right:10px;" @click="onEdit(text)">Edit</a-button>
+        <a-button :disabled="tabGroupData.find(f => f.selected).id || (text.goalId != '' && text.goalId)" style="margin-right:10px;" @click="onEdit(text)">Edit</a-button>
       </span>
     </a-table>
 
